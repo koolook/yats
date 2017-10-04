@@ -1,1 +1,1 @@
-export { simple } from "./simple-test/simple-test";
+export { simple } from './simple-test/simple-test';
