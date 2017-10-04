@@ -1,8 +1,42 @@
-// Karma configuration
-// Generated on Thu Oct 05 2017 00:11:56 GMT+0300 (Russian Standard Time)
+webpackCfg = {
+  resolve: {
+    extensions: ['.ts'],
+    modules: ['node_modules']
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader',
+      },
+    ],
+  },
+  node: {
+    global: true,
+    process: false,
+    crypto: 'empty',
+    module: false,
+    clearImmediate: false,
+    setImmediate: false
+  }
+};
 
-module.exports = function(config) {
+
+module.exports = function (config) {
   config.set({
+
+    plugins: [
+      require('karma-jasmine'),
+      require('karma-webpack'),
+      require('karma-phantomjs-launcher'),
+    ],
+
+    webpack: webpackCfg,
+    webpackMiddleware: {
+      // webpack-dev-middleware configuration 
+      // i. e. 
+      stats: 'errors-only'
+    },
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
@@ -27,6 +61,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'src/**/*.spec.ts': ['webpack']
     },
 
 
