@@ -12,9 +12,15 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "lib": [
-      "es2016",
-      "dom"
+    "types": [
+      "@types/node"
     ]
-  }
+  },
+  "files": [
+    "src/index.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+  
 }

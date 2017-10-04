@@ -26,7 +26,7 @@ var config = {
     entry: [
         __dirname + '/src/index.ts'
     ],
-    // devtool: 'source-map',
+    devtool: 'source-map',
     output: {
         path: path.join(__dirname, '/dist'),
         filename: outputFile,
@@ -54,7 +54,7 @@ var config = {
     resolve: {
         extensions: ['.js', '.ts'],
         modules: [
-            'node_modules',
+            // 'node_modules',
             'src',
         ]
     },
