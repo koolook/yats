@@ -13,14 +13,16 @@
       "node_modules/@types"
     ],
     "types": [
-      "@types/node"
+      "@types/node",
+      "@types/jasmine"
     ]
   },
-  "files": [
-    "src/index.ts"
+  "include": [
+    "src/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/**/*.spec.ts"
   ]
   
 }
